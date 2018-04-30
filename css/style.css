@@ -107,3 +107,13 @@ nav {
 	color: white;
 	background: #3d7140;
 }
+
+
+.formstyle {
+    display: inline-block;
+    /* background-color: black; */
+    border: 50px ridge black;
+    border-radius: 15%;
+    width: 40%;
+    padding: 50px;
+}

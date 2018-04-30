@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	.formstyle {
+    display: inline-block;
+    /* background-color: black; */
+    border: 50px ridge black;
+    border-radius: 15%;
+    width: 25%;
+    padding: 50px;
+}</style>
+</head>
+<body>
+	<form class='formstyle' method="post" action="mail_handler.php">
+		<input name="name" placeholder="your name"><br>
+		<input name="email" placeholder="your email address"><br>
+		<input name="subject" placeholder="Subject"><br>
+		<textarea name="body">
+Your message
+		</textarea><br>
+		<button type="submit" name="submit" value="submit">Send Mail</button>
+	</form>
+</body>
+</html>
