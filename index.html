@@ -50,7 +50,7 @@
 		<div class="container-fluid">
 
 			<div class="text-center">
-				<img src="img/profiler-round2.png" width=200 class="profile-pic">
+				<img src="img/profiler-round2.jpg" width=200 class="profile-pic">
 				<h1>Brian Morris</h1>
 			  <h3>Backend Developer</h3>
 			  <h5>Web/Mobile Developer</h5>
@@ -79,7 +79,7 @@
 			    			<img src="img/jobbie1.png" class="img-responsive center-block">
 			    		</div>
 			    		<div class="col-lg-4 col-lg-pull-8">
-			    			<h2><a href="http://jobb.ie" target="blank">Jobb.ie</a></h2>
+			    			<h2><a href="http://jobb.ie" target="blank">Part Pig</a></h2>
 			    			<p>A simple web app built to quickly find jobs in Ireland. Users enter the search term and desired county, and are offered job listings from 3 of the most popular job sites in Ireland</p>
 			    			<h4>Technology</h4>
 			    			<p>Jobbie uses Bootstrap3 for a mobile-first layout, with jQuery for easy page manipulation. On the backend an Express/Node.js app lives on a Heroku dyno that acts as a middleware to scrape job sites and return the information to the user.</p>
@@ -114,7 +114,7 @@
 			    			<img src="img/mydeliverypal.png" class="img-responsive center-block">
 			    		</div>
 			    		<div class="col-lg-4">
-			    			<h2><a href="https://play.google.com/store/apps/details?id=com.chrisdermody.mydeliverypal&hl=en" target="blank">My Delivery Pal</a></h2>
+			    			<h2><a href="https://play.google.com/store/apps/details?id=com.chrisdermody.mydeliverypal&hl=en" target="blank">Generic Job Search</a></h2>
 			    			<p>An Android application for delivery drivers and couriers, making them faster and more efficient at their job</p>
 			    			<h4>Technology</h4>
 			    			<p>Delivery Pal is build with Ionic, Angular, and Firebase for real-time location tracking. Integrating with the Google Maps API for address lookup and navigation. A Node.js server hosted on Heroku acts as a middle-man, handling backend logic and database updates within Firebase</p>
@@ -151,7 +151,7 @@
 			    			<img src="img/vistoryscreen1.png" class="img-responsive center-block">
 			    		</div>
 			    		<div class="col-lg-4 col-lg-pull-8">
-			    			<h2><a href="http://vistoryapp.com" target="blank">Vistory</a></h2>
+			    			<h2><a href="http://vistoryapp.com" target="blank">HackSlack</a></h2>
 			    			<h4>Mobile Car App</h4>
 			    			<p>An Android application for vehicle owners to quickly and easily log maintenance and parts costs for their cars.</p>
 			    			<h4>Technology</h4>
@@ -245,6 +245,16 @@
 				  	</a>
 				  </div>
 				</div>
+				<h2>Contact Me!</h2>
+				<form class="formstyle" method="post" action="php_mailer/mail_handler.php">
+					<input name="name" placeholder="your name"><br>
+					<input name="email" placeholder="your email address"><br>
+					<input name="subject" placeholder="Subject"><br>
+					<textarea name="body">
+			Your message
+					</textarea><br>
+					<button type="submit" name="submit" value="submit">Send Mail</button>
+				</form>
 			</div>
 
 

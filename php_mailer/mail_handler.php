@@ -1,6 +1,45 @@
 <?php
 require_once('email_config.php');
 require('phpmailer/PHPMailer/PHPMailerAutoload.php');
+
+$message = [];
+$output = [
+    'success' => null,
+    'messages' =>[]
+];
+
+$message['name'] = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+if(empty($message['name'])){
+    $output['success'] = false;
+    $output['messages'][]= 'missing name key';
+}
+
+$message['email'] = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+if(empty($message['email'])){
+    $output['success'] = false;
+    $output['messages'][]= 'missing email key';
+}
+
+$message['subject'] = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
+if(empty($message['subject'])){
+    $output['success'] = false;
+    $output['messages'][]= 'missing subject key';
+}
+
+$message['body'] = filter_var($_POST['body'], FILTER_SANITIZE_STRING);
+if(empty($message['body'])){
+    $output['success'] = false;
+    $output['messages'][]= 'missing body key';
+}
+
+
+if($output['success'] !== null){
+    http_response_code(400);
+    echo json_encode($output);
+    exit();
+}
+
+
 $mail = new PHPMailer;
 $mail->SMTPDebug = 3;           // Enable verbose debug output. Change to 0 to disable debugging output.
 
@@ -21,26 +60,38 @@ $options = array(
     )
 );
 $mail->smtpConnect($options);
-$mail->From = 'example@gmail.com';  // sender's email address (shows in "From" field)
-$mail->FromName = 'Example Name';   // sender's name (shows in "From" field)
-$mail->addAddress('recipient1@example.com', 'First Recipient');  // Add a recipient
+$mail->From = $message['email'];  // sender's email address (shows in "From" field)
+$mail->FromName = $message['name'];   // sender's name (shows in "From" field)
+$mail->addAddress(EMAIL_TO_ADDRESS);  // Add a recipient
 //$mail->addAddress('ellen@example.com');                        // Name is optional
-$mail->addReplyTo('example@gmail.com');                          // Add a reply-to address
+$mail->addReplyTo($message['email'], $message['name']);                          // Add a reply-to address
 //$mail->addCC('cc@example.com');
 //$mail->addBCC('bcc@example.com');
 
 //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
+$mail->isHTML(true); 
 
-$mail->Subject = 'Here is the subject';
-$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+if(empty($message['subject'])){
+$message['subject'] = $message['name'] . "has sent you a message on your portfolio";
+}
+
+
+if(empty($message['body'])){
+    $message['body'] = $message['name'] . "hello, I'd like to hire you";
+    }
+$message['body'] = nl2br($message['body']);
+$mail->Subject = $message['subject'];
+$mail->Body    = $message['body'];
+$mail->AltBody = htmlentities($message['body']);
 
 if(!$mail->send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
+    $output['success'] = false;
+    $output['messages'][]= 'Message could not be sent.';
+    $output['messages'][]= 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
-    echo 'Message has been sent';
+    $output['success'] = true;
+    $output['messages'][]= 'Message has been sent';
 }
+echo json_encode($output);
 ?>
