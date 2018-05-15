@@ -63,14 +63,21 @@ nav {
 }
 
 .navbar-text a.navbar-link {
-	color:white;
 	font-size: 1.3em;
 	font-weight: bolder;
-	margin: 0 5px 0 5px;
+	float:left;
+	margin:15px 10px 15px 10px;
 }
 .navbar-text {
-    float: left;
+    display: inline-block;
     margin: 15px 5px 15px 5px;
+}
+@media (min-width: 768px){
+	.navbar-text {
+		float: left;
+		margin-right: 15px;
+		margin-left: 15px;
+	}
 }
 
 .row-grey {
