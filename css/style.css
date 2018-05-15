@@ -10,16 +10,16 @@ body {
 	margin: 0;
 	background-repeat: no-repeat;
 	background-attachment: fixed;*/
-	margin-top:100px;
+	margin-top:90px;
 	font-size: 16px;
 	background: url(../img/bg.png) repeat;
 	color:black;
 }
-#head{
-	/* background: url('../img/background.jpg') top center no-repeat #bababa; */
-	/* background-size:cover; */
-	/* height:100vh; */
-}
+/* #head{
+	background: url('../img/background.jpg') top center no-repeat #bababa;
+	background-size:cover;
+	height:100vh;
+} */
 
 h1, h2, h3, h4, h5{
 	/* color:#4A4E69 !important; */
