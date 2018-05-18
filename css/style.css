@@ -1,34 +1,20 @@
 
 body {
-/*	background: #F2E9E4;*/
-	/* fallback for old browsers */
-	/*background: -webkit-linear-gradient(to left, #ef32d9, #89fffd);*/
-	/* Chrome 10-25, Safari 5.1-6 */
-	/*background: linear-gradient(to left, #ef32d9, #89fffd);*/
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-/*	height: 100%;
-	margin: 0;
-	background-repeat: no-repeat;
-	background-attachment: fixed;*/
-	margin-top:90px;
+	margin-top:75px;
 	font-size: 16px;
 	background: url(../img/bg.png) repeat;
 	color:black;
 }
-/* #head{
-	background: url('../img/background.jpg') top center no-repeat #bababa;
-	background-size:cover;
-	height:100vh;
-} */
+#head > h3{
+	margin-top: 10px;
+}
 
 h1, h2, h3, h4, h5{
-	/* color:#4A4E69 !important; */
 	font-weight: 300;
 	font-family: 'Open Sans', sans-serif;
 }
 
 p {
-	/* color: #4A4E69; */
 	font-weight: 300;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -37,6 +23,15 @@ p {
 	box-shadow: 0px 4px 6px 2px lightgrey;
   border-radius: 50%
 }
+.about{
+	background-color: whitesmoke;
+    border-radius: 10px;
+	border: outset lightgrey 9px;
+}
+div.about > p, #aboutQuote > h3 {
+	color:black;
+}
+
 
 .m-t-1 {
 	margin-top:1em;
@@ -79,26 +74,30 @@ nav {
 		margin-left: 15px;
 	}
 }
-
+.row-grey p, .row-grey h3, .row-grey ul, .row-grey h2{
+	color:whitesmoke;
+}
+.row-grey h2 > a{
+	color: rgb(87, 155, 234);
+}
+.row-grey .btn-launch{
+	box-shadow: 0px 2px 5px 1px black;
+}
 .row-grey {
-	/* background-color: lightgrey; */
-	background-color: rgba(194, 201, 201, 1.0);
+	
+	background-color: rgba(0, 1, 1, 0.65);
 	-webkit-clip-path: polygon(0 0%, 100% 4%, 100% 96%, 0% 100%);
 	clip-path: polygon(0 0%, 100% 4%, 100% 96%, 0% 100%);
 	padding: 65px 10px;
 }
 
 .row-white {
-	/*background-color: lightgrey;*/
-	/*-webkit-clip-path: polygon(0 0%, 100% 4%, 100% 96%, 0% 100%);*/
-	/*clip-path: polygon(0 8%, 100% 4%, 100% 96%, 0% 100%);*/
+	
 	padding: 65px 10px;
 }
 
 .row-footer {
-/*	background-color: lightgrey;
-	-webkit-clip-path: polygon(0 0%, 100% 4%, 100% 100%, 0% 100%);
-	clip-path: polygon(0 0%, 100% 4%, 100% 100%, 0% 100%);*/
+
 	padding: 65px 10px;
 }
 .moreinfo{
@@ -138,7 +137,6 @@ nav {
 
 .formstyle {
     display: inline-block;
-    /* background-color: black; */
     border: 50px ridge black;
     border-radius: 15%;
     width: 40%;
